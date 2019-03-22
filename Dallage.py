@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# coding : UTF-8
+# -*- coding: UTF-8 -*-
 import turtle as dessin
 
 
@@ -7,7 +7,7 @@ def is_number(nbr):
     """
     Fonction qui verifie si un str est un int ou un float
     Source: pythoncentral.io
-    :param nbr = String à vérifier:
+    :param nbr: String à vérifier:
     :return True ou False:
     """
     try:
@@ -25,12 +25,12 @@ def retry():
     return sortie
 
 
-def carre(cote, long, larg):
+def carre(cote, lo, la):
     posx = 0
     posy = 0
     dessin.begin_fill()
-    for k in range(long):
-        for j in range(larg):
+    for k in range(lo):
+        for j in range(la):
             for i in range(4):
                 dessin.fd(cote)
                 dessin.rt(90)
@@ -38,11 +38,11 @@ def carre(cote, long, larg):
         posy += cote
 
 
-def longueur(long, larg):
+def long(lo, la):
     a = 0
 
 
-def largeur(long, larg):
+def larg(lo, la):
     a = 0
 
 
@@ -70,12 +70,14 @@ def main():
         carre(tailleLa, nblo, nbla)
     else:
         lola = input("Dalle placée en longueur ou en largeur? ").upper()
+        print(lola)
+        print(type(lola))
         while lola not in ["LONGUEUR", "LARGEUR"]:
             lola = retry()
         if lola == "LONGUEUR":
-            longueur(nbla, nblo)
+            long(nbla, nblo)
         else:
-            largeur(nbla, nblo)
+            larg(nbla, nblo)
 
 
 if __name__ == '__main__':
